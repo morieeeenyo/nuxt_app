@@ -1,16 +1,9 @@
 <template>
   <div>
-    <button
-      type="button"
-      name="button"
-      @click="getMessage"
-    >
+    <button type="button" name="button" @click="getMessage">
       RailsからAPIを取得する
     </button>
-    <div
-      v-for="(message, i) in messages"
-      :key="i"
-    >
+    <div v-for="(message, i) in messages" :key="i">
       {{ message }}
     </div>
   </div>
@@ -18,16 +11,17 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      messages: []
+      messages: [],
     }
   },
   methods: {
-    getMessage () {
-      this.$axios.$get('/api/v1/hello')
-        .then(response => this.messages.push(response))
-    }
-  }
+    getMessage() {
+      this.$axios
+        .$get('/api/hello')
+        .then((response) => this.messages.push(response))
+    },
+  },
 }
 </script>
