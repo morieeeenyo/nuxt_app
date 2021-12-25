@@ -1,6 +1,6 @@
-import { AxiosResponse, AxiosRequestConfig, AxiosError } from 'axios'
+import { AxiosResponse, AxiosRequestConfig, AxiosError } from "axios"
 
-export default ({ $axios }: {$axios: any}) => {
+export default ({ $axios }: { $axios: any }) => {
   // リクエストログ
   $axios.onRequest((config: AxiosRequestConfig) => {
     console.log(config)
@@ -13,4 +13,4 @@ export default ({ $axios }: {$axios: any}) => {
   $axios.onError((e: AxiosError) => {
     console.log(e.response)
   })
- }
+}

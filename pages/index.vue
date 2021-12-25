@@ -19,7 +19,7 @@ export default {
   methods: {
     getMessage() {
       this.$axios
-        .$get('/api/hello')
+        .$get("/api/hello")
         .then((response) => this.messages.push(response))
     },
   },
