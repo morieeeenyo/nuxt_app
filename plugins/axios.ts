@@ -1,7 +1,6 @@
 import { AxiosResponse, AxiosRequestConfig, AxiosError } from 'axios'
-import { NuxtAxiosInstance } from '@nuxtjs/axios'
 
-export default ({ $axios }: {$axios: NuxtAxiosInstance}) => {
+export default ({ $axios }: {$axios: any}) => {
   // リクエストログ
   $axios.onRequest((config: AxiosRequestConfig) => {
     console.log(config)
