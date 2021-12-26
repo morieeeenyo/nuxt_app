@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Usersテーブルの取得</h2>
+    <h2 class="hoge">Usersテーブルの取得</h2>
     <table v-if="users.length">
       <thead>
         <tr>
