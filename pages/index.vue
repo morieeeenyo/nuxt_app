@@ -1,8 +1,6 @@
 <template>
   <div>
-    <h2>
-      Usersテーブルの取得
-    </h2>
+    <h2>Usersテーブルの取得</h2>
     <table v-if="users.length">
       <thead>
         <tr>
@@ -13,10 +11,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr
-          v-for="(user, i) in users"
-          :key="`user-${i}`"
-        >
+        <tr v-for="(user, i) in users" :key="`user-${i}`">
           <td>{{ user.id }}</td>
           <td>{{ user.name }}</td>
           <td>{{ user.email }}</td>
@@ -25,30 +20,28 @@
       </tbody>
     </table>
 
-    <div v-else>
-      ユーザーが取得できませんでした
-    </div>
+    <div v-else>ユーザーが取得できませんでした</div>
   </div>
 </template>
 
 <script>
 export default {
   // コンポーネントの読み込み時に実行
-  async asyncData ({ $axios }) {
+  async asyncData({ $axios }) {
     let users = []
-    await $axios.$get('/api/users')
-      .then(res => (users = res))
+    await $axios.$get("/api/users").then((res) => (users = res))
     return { users }
   },
   computed: {
-    dateFormat () {
+    dateFormat() {
       return (date) => {
-        const dateTimeFormat = new Intl.DateTimeFormat(
-          'ja', { dateStyle: 'medium', timeStyle: 'short' }
-        )
+        const dateTimeFormat = new Intl.DateTimeFormat("ja", {
+          dateStyle: "medium",
+          timeStyle: "short",
+        })
         return dateTimeFormat.format(new Date(date)) // 日付のフォーマット
       }
-    }
-  }
+    },
+  },
 }
 </script>
