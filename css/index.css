@@ -6,6 +6,7 @@
   border-collapse: collapse;
   border: 2px solid green;
 
+  /* こんな感じで&でつないでネストさせる */
   & .head {
     & th {
       border: 1px solid green;
