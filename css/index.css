@@ -1,3 +1,22 @@
 .hoge {
   color: red;
 }
+
+.users-table {
+  border-collapse: collapse;
+  border: 2px solid green;
+
+  & .head {
+    & th {
+      border: 1px solid green;
+      border-bottom: 3px double green;
+      padding: 0.25em;
+    }
+  }
+
+  & td {
+    text-align: center;
+    border: 1px solid green;
+    padding: 0.25em;
+  }
+}

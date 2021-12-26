@@ -35,6 +35,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     "@nuxt/typescript-build",
+    '@nuxt/postcss8'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -65,7 +66,7 @@ export default {
         // postcss-preset-env 設定を変更します
         autoprefixer: {
           grid: true
-        }
+        },
       }
     }
   },
