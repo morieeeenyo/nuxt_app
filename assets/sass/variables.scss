@@ -8,8 +8,10 @@ $grid-breakpoints: (
 );
 
 $display-breakpoints: (
+  // <768px
   'ipad-and-down':
   'only screen and (max-width: #{map-get($grid-breakpoints, 'ipad') - 1})',
+  // >=768px
   'ipad-and-up':
   'only screen and (min-width: #{map-get($grid-breakpoints, 'ipad')})',
   'mobile-and-down':

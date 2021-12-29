@@ -51,7 +51,7 @@ export default {
   // vuetifyのカスタマイズ
   vuetify: {
     treeShake: true,
-    customVariables: ['~/assets/sass/variables.scss'],
+    customVariables: ['./assets/sass/variables.scss'],
     // themeカラーの設定
     theme: {
       themes: {
