@@ -40,6 +40,24 @@
           {{ color }}
         </v-btn>
       </v-card-text>
+      <v-card-title>
+        VuetifyカスタムCSSの検証
+      </v-card-title>
+      <v-card-text>
+        ipad（768px）とmobile（426px）で表示・非表示
+      </v-card-text>
+      <v-card-text>
+        <v-card
+          v-for="(cls, i) in customClass"
+          :key="`cls-${i}`"
+          :color="cls.color"
+          :class="cls.name"
+        >
+          <v-card-text>
+            {{ cls.des }}
+          </v-card-text>
+        </v-card>
+      </v-card-text>
     </v-card>
   </v-container>
 </template>
