@@ -21,7 +21,9 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    '@css/app.css'
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ["plugins/axios"],
@@ -33,6 +35,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     "@nuxt/typescript-build",
+    '@nuxt/postcss8'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -48,7 +51,25 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    postcss: {
+      // キーとしてプラグイン名を、値として引数を追加します
+      // プラグインは前もって npm か yarn で dependencies としてインストールしておきます
+      plugins: {
+        // 値として false を渡すことによりプラグインを無効化します
+        'postcss-url': false,
+        'postcss-nested': {},
+        'postcss-responsive-type': {},
+        'postcss-hexrgba': {}
+      },
+      preset: {
+        // postcss-preset-env 設定を変更します
+        autoprefixer: {
+          grid: true
+        },
+      }
+    }
+  },
 
   server: {
     port: 8888,
