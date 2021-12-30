@@ -53,15 +53,17 @@ export default {
   },
 
   i18n: {
+    // 対応言語の指定
     locales: ['ja', 'en'],
+    // デフォルトの言語設定
     defaultLocale: 'ja',
     // Doc: https://kazupon.github.io/vue-i18n/api/#properties
     vueI18n: {
-      fallbackLocale: 'ja',
-      // silentTranslationWarn: true,
-      silentFallbackWarn: true,
+      fallbackLocale: 'ja', // 翻訳対象のキーがない場合に使われる言語
+      silentTranslationWarn: true, // i18nの警告を表示しない
+      silentFallbackWarn: true, // 翻訳キーがない場合に警告を発生させない
       messages: {
-        ja: require('./locales/ja.json'),
+        ja: require('./locales/ja.json'), // 読み込み先ファイル
         en: require('./locales/en.json')
       }
     }
