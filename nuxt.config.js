@@ -21,8 +21,9 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
+  // アプリ全体で使うcss
   css: [
-    '@css/app.css'
+    './assets/sass/main.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -35,7 +36,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     "@nuxt/typescript-build",
-    '@nuxt/postcss8'
+    "@nuxtjs/vuetify",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -50,26 +51,28 @@ export default {
     baseURL: "http://localhost:3000",
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    postcss: {
-      // キーとしてプラグイン名を、値として引数を追加します
-      // プラグインは前もって npm か yarn で dependencies としてインストールしておきます
-      plugins: {
-        // 値として false を渡すことによりプラグインを無効化します
-        'postcss-url': false,
-        'postcss-nested': {},
-        'postcss-responsive-type': {},
-        'postcss-hexrgba': {}
-      },
-      preset: {
-        // postcss-preset-env 設定を変更します
-        autoprefixer: {
-          grid: true
-        },
+  // vuetifyのカスタマイズ
+  vuetify: {
+    treeShake: true,
+    customVariables: ['./assets/sass/variables.scss'],
+    // themeカラーの設定
+    theme: {
+      themes: {
+        // デフォルトはlightテーマ
+        light: {
+          primary: '4080BE',
+          info: '4FC1E9',
+          success: '44D69E',
+          warning: 'FEB65E',
+          error: 'FB8678',
+          background: 'f6f6f4'
+        }
       }
     }
   },
+
+  // Build Configuration: https://go.nuxtjs.dev/config-build
+  build: {},
 
   server: {
     port: 8888,
