@@ -43,12 +43,30 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
+    "@nuxtjs/i18n",
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: "http://localhost:3000",
+  },
+
+  i18n: {
+    // 対応言語の指定
+    locales: ['ja', 'en'],
+    // デフォルトの言語設定
+    defaultLocale: 'ja',
+    // Doc: https://kazupon.github.io/vue-i18n/api/#properties
+    vueI18n: {
+      fallbackLocale: 'ja', // 翻訳対象のキーがない場合に使われる言語
+      silentTranslationWarn: true, // i18nの警告を表示しない
+      silentFallbackWarn: true, // 翻訳キーがない場合に警告を発生させない
+      messages: {
+        ja: require('./locales/ja.json'), // 読み込み先ファイル
+        en: require('./locales/en.json')
+      }
+    }
   },
 
   // vuetifyのカスタマイズ
