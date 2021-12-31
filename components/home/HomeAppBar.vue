@@ -12,6 +12,7 @@
 
 
     <v-spacer />
+    <!-- これより下の要素は右寄せになる -->
     <v-toolbar-items class="ml-2">
       <v-btn
         v-for="(menu, i) in menus"
