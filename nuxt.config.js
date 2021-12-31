@@ -20,6 +20,10 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
 
+  publicRuntimeConfig: {
+    appName: process.env.NUXT_APP_NAME // 追加
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   // アプリ全体で使うcss
   css: [
