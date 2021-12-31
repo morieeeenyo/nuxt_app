@@ -1,7 +1,9 @@
 <template>
   <v-app>
     <!-- isプロパティを使わない場合はimportなしで使える -->
-    <home-app-bar />
+    <home-app-bar
+      :menus="menus"
+    />
     <!-- gradient→グラデーション -->
     <!-- lorempicsumから画像を取得 -->
     <v-img
