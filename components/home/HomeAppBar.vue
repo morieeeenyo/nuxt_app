@@ -4,6 +4,7 @@
     app
     dark
   >
+    <app-logo />
     <v-toolbar-title>
       {{ appName }}
     </v-toolbar-title>
