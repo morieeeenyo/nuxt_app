@@ -31,12 +31,29 @@ export default {
     menus: {
       type: Array,
       default: () => []
+    },
+    imgHeight: {
+      type: Number,
+      default: 0
     }
   },
   // publicRuntimeConfigからappNameというキーに対応する値を呼び出す
   data ({ $config: { appName } }) {
     return {
-      appName
+      appName,
+      scrollY: 0 // 縦方向のスクロール
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.onScroll) // イベント予約
+  },
+  beforeDestroy () {
+    // ページ遷移等でコンポーネントが表示されなくなる際に実行
+    window.removeEventListener('scroll', this.onScroll) // イベント解除
+  },
+  methods: {
+    onScroll () {
+      this.scrollY = window.scrollY // 画面上のスクロール値をstateに格納
     }
   }
 }

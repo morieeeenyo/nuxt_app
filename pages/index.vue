@@ -3,6 +3,7 @@
     <!-- isプロパティを使わない場合はimportなしで使える -->
     <home-app-bar
       :menus="menus"
+      :img-height="imgHeight"
     />
     <!-- gradient→グラデーション -->
     <!-- lorempicsumから画像を取得 -->
