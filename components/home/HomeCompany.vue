@@ -37,18 +37,6 @@
                   mdi-twitter
                 </v-icon>
               </v-btn>
-              <v-btn
-                v-if="member.slack"
-                :href="member.slack"
-                target="_blank"
-                rel="noopener noreferrer"
-                small
-                icon
-              >
-                <v-icon size="18">
-                  mdi-slack
-                </v-icon>
-                </v-btn>
             </v-list-item-action-text>
           </v-list-item-content>
         </v-list-item>
@@ -100,26 +88,25 @@
 
 <script>
 import member1 from '../../assets/images/member1.png'
-import member2 from '../../assets/images/member2.png'
-import member3 from '../../assets/images/member3.png'
 
 export default {
   data () {
-    const twitter = 'https://twitter.com/esegrammer'
-    const slack = 'https://join.slack.com/t/dokugaku-kai/shared_invite/zt-a5j1suoh-Y0fspHbo1fb0Wj6YTpDdXA'
-    const companyUrl = 'http://blog.cloud-acct.com'
+    const twitter = 'https://twitter.com/togo_mentor'
+    const companyUrl = 'http://moritania.ml'
     return {
       members: [
-        { name: 'あんどう', position: '代表', img: member1, twitter, slack },
-        { name: 'アローン', position: 'エンジニア', img: member2 },
-        { name: 'カール', position: 'エンジニア', img: member3 }
+        { name: 'もうり', position: '国王', img: member1, twitter },
+        { name: 'もうり', position: '国王', img: member1, twitter },
+        { name: 'もうり', position: '国王', img: member1, twitter },
+        { name: 'もうり', position: '国王', img: member1, twitter },
+        { name: 'もうり', position: '国王', img: member1, twitter },
       ],
       infomations: [
-        { icon: 'mdi-domain', text: 'BizPlanner株式会社' },
+        { icon: 'mdi-domain', text: '毛利タニア共和国' },
         { icon: 'mdi-link-variant', link: companyUrl },
-        { icon: 'mdi-flag', text: '2020年7月に設立' },
-        { icon: 'mdi-account-multiple', text: '3人のメンバー' },
-        { icon: 'mdi-map-marker', text: '東京都港区虎ノ門一丁目17番1号' },
+        { icon: 'mdi-flag', text: '2020年11月に設立' },
+        { icon: 'mdi-account-multiple', text: '1人のメンバー' },
+        { icon: 'mdi-map-marker', text: '日本' },
         { icon: 'mdi-handshake', text: 'Webアプリ開発・経営コンサルティング' }
       ]
     }
