@@ -10,7 +10,9 @@
     <app-logo
       @click.native="goTo('scroll-top')"
     />
-    <v-toolbar-title>
+    <v-toolbar-title
+      class="hidden-mobile-and-down"
+    >
       {{ appName }}
     </v-toolbar-title>
 
@@ -18,7 +20,7 @@
 
     <v-spacer />
     <!-- これより下の要素は右寄せになる -->
-    <v-toolbar-items class="ml-2">
+    <v-toolbar-items class="ml-2 hidden-ipad-and-down">
       <v-btn
         v-for="(menu, i) in menus"
         :key="`menu-btn-${i}`"
@@ -31,6 +33,36 @@
 
     <app-signup-button />
     <app-login-button />
+
+    <!-- ipadより大きいサイズでは非表示 -->
+    <!-- ハンバーガーメニュー -->
+    <v-menu
+      bottom
+      nudge-left="110"
+      nudge-width="100"
+    >
+      <template #activator="{ on }">
+        <v-app-bar-nav-icon
+          class="hidden-ipad-and-up"
+          v-on="on"
+        />
+      </template>
+      <v-list
+        dense
+        class="hidden-ipad-and-up"
+      >
+        <v-list-item
+          v-for="(menu, i) in menus"
+          :key="`menu-list-${i}`"
+          exact
+          @click="goTo(menu.title)"
+        >
+          <v-list-item-title>
+            {{ $t(`menus.${menu.title}`) }}
+          </v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
 
   </v-app-bar>
 </template>
