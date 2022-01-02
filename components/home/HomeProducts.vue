@@ -13,6 +13,7 @@
       </v-list>
     </v-col>
     <v-col cols="12" sm="6">
+      <!-- グラフ -->
       <v-sparkline
         :value="sparkline.value"
         :gradient="sparkline.gradient"

@@ -28,6 +28,7 @@ export default {
     }
   },
   computed: {
+    // 2020-今年
     copyRightYear () {
       const beginningYear = 2020
       const thisYear = new Date().getFullYear()

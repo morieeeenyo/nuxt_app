@@ -110,7 +110,7 @@ export default {
       this.scrollY = window.scrollY // 画面上のスクロール値をstateに格納
     },
     goTo (id) {
-      this.$vuetify.goTo(`#${id}`)
+      this.$vuetify.goTo(`#${id}`) // 指定したidの箇所に移動
     }
   }
 }

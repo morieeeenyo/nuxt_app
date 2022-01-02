@@ -53,7 +53,7 @@
 export default {
   data () {
     return {
-      blogUrl: 'https://blog.cloud-acct.com/categories/udemy',
+      blogUrl: 'https://kaidoku-reading.net/',
       technologies: [
         { name: 'Docker', v: 'v19.03+', use: '開発環境', color: '#2496ED' },
         { name: 'Rails api', v: 'v6.0+', use: 'サーバーサイド', color: '#CC0000' },
