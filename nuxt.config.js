@@ -20,6 +20,10 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
 
+  publicRuntimeConfig: {
+    appName: process.env.NUXT_APP_NAME
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   // アプリ全体で使うcss
   css: [
@@ -83,7 +87,8 @@ export default {
           success: '44D69E',
           warning: 'FEB65E',
           error: 'FB8678',
-          background: 'f6f6f4'
+          background: 'f6f6f4',
+          myblue: '1867C0'
         }
       }
     }
